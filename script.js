@@ -91,13 +91,13 @@ function renderCards(array,container){
        const cardImage=document.createElement('img');
        cardImage.setAttribute('src',item.userImage);
        const cardFirstName=document.createElement('h3');
-       cardFirstName.textContent=item.userFirstName;
+       cardFirstName.textContent=item.userName;
        const cardLastName=document.createElement('h4');
        cardLastName.textContent=item.userLastName;
        const cardAge=document.createElement('h5');
-       cardAge.textContent=item.userAge;
+       cardAge.textContent=item.userAge + ': years old';
        const cardAddress=document.createElement('h6');
-       cardAddress.textContent=item.userAddresses;
+       cardAddress.textContent='Addresses: '+item.userAddresses;
        const cardNumber=document.createElement('h2');
        cardNumber.textContent=item.userId;
        cardWrapper.append(cardNumber,cardImage,cardFirstName,cardLastName,cardAge,cardAddress);

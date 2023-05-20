@@ -1,8 +1,10 @@
-body{
-    background-color: red;
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+body{
+    background-color: grey;
 }
 .cards-container{
     display:grid;
@@ -11,11 +13,18 @@ body{
     gap:60px;
 }
 .cards-container div{
-    height:350px;
-    padding:5px 10px;
-    background-color: rgb(64, 41, 3);
-    color:white;
-    border-radius:10px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 12px;
+    background-color: rgb(125 73 64);
+    color: white;
+    border-radius: 10px;
+    cursor:pointer;
+    transition:box-shadow 0.5s;
+}
+.cards-container div:hover{
+    box-shadow:0 0 10px black;
 }
 .cards-container  div h2{
     text-align:right;
@@ -28,5 +37,23 @@ body{
 }
 .cards-container div:nth-child(7){
     grid-column: 4/5;
-
+}
+@media (max-width:996px){
+    .cards-container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        padding: 5px 20px;
+        gap: 40px;
+    }
+    .cards-container div:nth-child(7) {
+        grid-column: 3/4;
+    }
+}
+@media (max-width:766px){
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        padding: 5px 20px;
+        gap: 20px;
+    }
 }
